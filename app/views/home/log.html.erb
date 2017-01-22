@@ -4,23 +4,25 @@
 
 <%= image_tag('log_game.png') %>
 
-<%= form_for @log do |f| %>
+<%= form_for @game do |f| %>
   <table>
   <tr>
     <td>Date Played:</td>
-    <td><%= f.date_select 'abc', 'def' %></td>
+    <td><%= f.date_select :played_at, order: [:month, :day, :year] %></td>
   </tr>
   <tr>
     <td>Opponent:</td>
-    <td></td>
+    <td><%= select_tag :opponent_id, options_from_collection_for_select(User.all, :id, :email) %></td>
   </tr>
   <tr>
     <td>Your Score:</td>
-    <td></td>
+    <td><%= text_field_tag :score%></td>
   </tr>
   <tr>
     <td>Their Score:</td>
-    <td></td>
+    <td><%= text_field_tag :opponent_score %></td>
   </tr>
   </table>
+  <%= f.submit :Save %>
+  <%= link_to :cancel, root_path %>
 <% end %>
