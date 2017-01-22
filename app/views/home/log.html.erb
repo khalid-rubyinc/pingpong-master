@@ -3,3 +3,24 @@
 <div class="alert alert-warning" role="alert">This is a sample page. Replace link in the header with your own.</div>
 
 <%= image_tag('log_game.png') %>
+
+<%= form_for @log do |f| %>
+  <table>
+  <tr>
+    <td>Date Played:</td>
+    <td><%= f.date_select 'abc', 'def' %></td>
+  </tr>
+  <tr>
+    <td>Opponent:</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Your Score:</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Their Score:</td>
+    <td></td>
+  </tr>
+  </table>
+<% end %>

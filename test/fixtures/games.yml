@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player_one_score_id: 1
+  player_two_score_id: 1
+  played_at: 2017-01-22
+
+two:
+  player_one_score_id: 1
+  player_two_score_id: 1
+  played_at: 2017-01-22
