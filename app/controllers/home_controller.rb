@@ -10,7 +10,7 @@ class HomeController < ApplicationController
         user.scores.sum(&:score),
         user.scores.count ]
     end.sort_by(&:first).sort_by(&:third).reverse.sort_by(&:second).reverse
-
+    # Could improve alogorithm to account for not all wins should count the same.
   end
 
   def history
