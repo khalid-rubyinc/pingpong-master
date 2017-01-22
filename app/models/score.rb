@@ -3,6 +3,12 @@ class Score < ApplicationRecord
   has_one :player_two, foreign_key: 'player_two_score_id', class_name: 'Game'
   belongs_to :user
 
+  validates :score,
+            numericality: {
+              only_integer: true,
+              greater_than_or_equal_to: 0
+            }
+
   def game
     player_one || player_two
   end
