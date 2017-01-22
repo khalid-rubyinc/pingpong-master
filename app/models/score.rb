@@ -1,4 +1,19 @@
 class Score < ApplicationRecord
-  has_many :games
-  belongs_to :users
+  has_one :player_one, foreign_key: 'player_one_score_id', class_name: 'Game'
+  has_one :player_two, foreign_key: 'player_two_score_id', class_name: 'Game'
+  belongs_to :user
+
+  def game
+    player_one || player_two
+  end
+
+  def opponent_name
+    return player_one.player_two.user.name if player_one
+    return player_two.player_one.user.name if player_two
+  end
+
+  def result
+    return game.result if player_one
+    return game.result == 'W' ? 'L' : 'W' if player_two
+  end
 end

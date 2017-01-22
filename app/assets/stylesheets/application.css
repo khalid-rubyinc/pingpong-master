@@ -14,3 +14,11 @@
  *= require_tree .
  *= require_self
  */
+
+table {
+    width: 1000px;
+}
+
+input[type='text'] {
+    width: 30px;
+}

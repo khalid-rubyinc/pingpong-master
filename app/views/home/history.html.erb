@@ -3,3 +3,20 @@
 <div class="alert alert-warning" role="alert">This is a sample page. Replace link in the header with your own.</div>
 
 <%= image_tag('history.png') %>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Opponent</th>
+    <th>Score</th>
+    <th>Result</th>
+  </tr>
+  <% @scores.each do |score| %>
+    <tr>
+      <td><%= score.game.date %></td>
+      <td><%= score.opponent_name %></td>
+      <td><%= score.score %></td>
+      <td><%= score.result %></td>
+    </tr>
+  <% end %>
+</table>

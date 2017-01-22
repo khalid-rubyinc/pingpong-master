@@ -3,3 +3,22 @@
 <div class="alert alert-warning" role="alert">This is a sample page.</div>
 
 <%= image_tag('leaderboard.png') %>
+
+<table>
+  <tr>
+    <th>Rank</th>
+    <th>Name</th>
+    <th>Score</th>
+    <th>Games Played</th>
+  </tr>
+  <% rank = 0 %>
+  <% @leaderboard.each do |leaderboard| %>
+    <% rank += 1 %>
+    <tr>
+      <td><%= rank %></td>
+      <td><%= leaderboard[0] %></td>
+      <td><%= leaderboard[1] %></td>
+      <td><%= leaderboard[2] %></td>
+    </tr>
+  <% end %>
+</table>
