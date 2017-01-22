@@ -19,3 +19,4 @@
 .idea
 log/development.log
 .byebug_history
+log/test.log
